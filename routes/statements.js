@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addStatement, getStatement, updateStatement } from "../controllers/statement_controller.js";
+import { addStatement, deleteStatement, getStatement, updateStatement } from "../controllers/statement_controller.js";
 
 // create Router
 const statementsRouter = Router();
@@ -15,6 +15,8 @@ statementsRouter.post("/statement",addStatement);
 statementsRouter.get('/statement', getStatement);
 
 statementsRouter.patch('/statement/:id', updateStatement);
+
+statementsRouter.delete('/statement/:id',deleteStatement)
 
 // export router
 export default statementsRouter;

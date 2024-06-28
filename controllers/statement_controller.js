@@ -41,7 +41,7 @@ export const deleteStatement = async (req, res, next) => {
         // Delete recipe by id
         const deletedRecipe = await RecipeModel.findByIdAndDelete(req.params.id);
         // Return response
-        res.json(deletedStatement)
+        res.status(200).send(updatedStatement);
 
     } catch (error) {
         next(error);
